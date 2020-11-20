@@ -10,6 +10,10 @@ $theme-colors:(
   src: url('Fonts/Lato-Regular.ttf');
 }
 
-body{
+html{
   font-family: Lato;
+}
+
+#intro{
+  background-image: url(images/intro.jpg);
 }

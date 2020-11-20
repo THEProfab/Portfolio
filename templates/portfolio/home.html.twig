@@ -2,15 +2,29 @@
 
 {% set title = "Marc Bayart" %}
 
+{% block header %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center text-white" id="intro">
+                <h1 style="margin-top: 150px; margin-bottom: 150px"> Marc Bayart </h1>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
 {% block body %}
+    <div class="container-fluid text-center bg-primary text-white">
 
-<div>
-    <h1 class="text-primary">Hello {{ controller_name }}! ✅</h1>
+        <div>
+            <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/bayart/Documents/Portfolio/Portfolio/src/Controller/PortfolioController.php'|file_link(0) }}">src/Controller/PortfolioController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/bayart/Documents/Portfolio/Portfolio/templates/portfolio/home.html.twig'|file_link(0) }}">templates/portfolio/index.html.twig</a></code></li>
-    </ul>
-</div>
+            This friendly message is coming from:
+            <ul>
+                <li>Your controller at <code><a href="{{ '/home/bayart/Documents/Portfolio/Portfolio/src/Controller/PortfolioController.php'|file_link(0) }}">src/Controller/PortfolioController.php</a></code></li>
+                <li>Your template at <code><a href="{{ '/home/bayart/Documents/Portfolio/Portfolio/templates/portfolio/home.html.twig'|file_link(0) }}">templates/portfolio/index.html.twig</a></code></li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
