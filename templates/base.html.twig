@@ -1,12 +1,18 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
+
+        {% block icon %}
+            <link rel="shortcut icon" href="{{ asset('/assets/images/shortcut.jpg') }}"/>
+        {% endblock %}
+
         <title>
             {{ title }}
         </title>
+
+        {{ encore_entry_link_tags('app') }}
+
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
 
@@ -16,8 +22,10 @@
 
     <body>
         {% block body %}{% endblock %}
+
+        {{ encore_entry_script_tags('app') }}
+
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>
 

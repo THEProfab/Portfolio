@@ -7,13 +7,25 @@ $theme-colors:(
 
 @font-face {
   font-family: Lato;
-  src: url('Fonts/Lato-Regular.ttf');
+  src: url('fonts/Lato-Regular.ttf');
 }
 
-html{
+body{
+  font-family: Lato;
+}
+
+header{
+  font-family: Lato;
+}
+
+footer{
   font-family: Lato;
 }
 
 #intro{
-  background-image: url(images/intro.jpg);
+  background-image: url(../../public/assets/images/intro.jpg);
+}
+
+hr{
+  max-width: 75px;
 }
