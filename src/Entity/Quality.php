@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\InformationRepository;
+use App\Repository\QualityRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=InformationRepository::class)
+ * @ORM\Entity(repositoryClass=QualityRepository::class)
  */
-class Information
+class Quality
 {
     /**
      * @ORM\Id
@@ -20,6 +20,11 @@ class Information
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $name;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $description;
 
     /**
@@ -30,6 +35,18 @@ class Information
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
     }
 
     public function getDescription(): ?string

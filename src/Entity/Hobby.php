@@ -28,9 +28,9 @@ class Hobby
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\Picture", cascade={"persist", "remove"})
      */
-    private $pictureId;
+    private $picture;
 
     public function getId(): ?int
     {
@@ -61,14 +61,14 @@ class Hobby
         return $this;
     }
 
-    public function getPictureId(): ?int
+    public function getPicture(): ?Picture
     {
-        return $this->pictureId;
+        return $this->picture;
     }
 
-    public function setPictureId(int $pictureId): self
+    public function setPicture(Picture $picture): self
     {
-        $this->pictureId = $pictureId;
+        $this->picture = $picture;
 
         return $this;
     }

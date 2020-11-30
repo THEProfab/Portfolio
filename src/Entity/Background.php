@@ -28,24 +28,24 @@ class Background
     private $school;
 
     /**
-     * @ORM\Column(type="date")
-     */
-    private $beginning;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $end;
-
-    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\Picture", cascade={"persist", "remove"})
      */
-    private $pictureId;
+    private $picture;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $beginning;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $end;
 
     public function getId(): ?int
     {
@@ -76,30 +76,6 @@ class Background
         return $this;
     }
 
-    public function getBeginning(): ?\DateTimeInterface
-    {
-        return $this->beginning;
-    }
-
-    public function setBeginning(\DateTimeInterface $beginning): self
-    {
-        $this->beginning = $beginning;
-
-        return $this;
-    }
-
-    public function getEnd(): ?\DateTimeInterface
-    {
-        return $this->end;
-    }
-
-    public function setEnd(\DateTimeInterface $end): self
-    {
-        $this->end = $end;
-
-        return $this;
-    }
-
     public function getDescription(): ?string
     {
         return $this->description;
@@ -112,14 +88,38 @@ class Background
         return $this;
     }
 
-    public function getPictureId(): ?int
+    public function getPicture(): ?Picture
     {
-        return $this->pictureId;
+        return $this->picture;
     }
 
-    public function setPictureId(int $pictureId): self
+    public function setPicture(Picture $picture): self
     {
-        $this->pictureId = $pictureId;
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getBeginning(): ?string
+    {
+        return $this->beginning;
+    }
+
+    public function setBeginning(string $beginning): self
+    {
+        $this->beginning = $beginning;
+
+        return $this;
+    }
+
+    public function getEnd(): ?string
+    {
+        return $this->end;
+    }
+
+    public function setEnd(string $end): self
+    {
+        $this->end = $end;
 
         return $this;
     }

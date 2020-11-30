@@ -28,17 +28,17 @@ class Project
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\Picture", cascade={"persist", "remove"})
      */
-    private $pictureId;
+    private $picture;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", length=255)
      */
     private $beginning;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", length=255)
      */
     private $end;
 
@@ -71,36 +71,36 @@ class Project
         return $this;
     }
 
-    public function getPictureId(): ?int
+    public function getPicture(): ?Picture
     {
-        return $this->pictureId;
+        return $this->picture;
     }
 
-    public function setPictureId(int $pictureId): self
+    public function setPicture(Picture $picture): self
     {
-        $this->pictureId = $pictureId;
+        $this->picture = $picture;
 
         return $this;
     }
 
-    public function getBeginning(): ?\DateTimeInterface
+    public function getBeginning(): ?string
     {
         return $this->beginning;
     }
 
-    public function setBeginning(\DateTimeInterface $beginning): self
+    public function setBeginning(string $beginning): self
     {
         $this->beginning = $beginning;
 
         return $this;
     }
 
-    public function getEnd(): ?\DateTimeInterface
+    public function getEnd(): ?string
     {
         return $this->end;
     }
 
-    public function setEnd(\DateTimeInterface $end): self
+    public function setEnd(string $end): self
     {
         $this->end = $end;
 
