@@ -14,7 +14,7 @@ class InformationFixture extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        $infos = ["<a class=\"text-white\" href=\"{{ asset('/assets/CV_Marc_Bayart.pdf') }}\">Téléchargez mon CV !</a>", "Permis B et véhicule personnel", "Mobilité régionale", "marc.bayart62@gmail.com", "<a class=\"text-white\" href=\"https://www.linkedin.com/in/marc-bayart/\">Vers mon compte LinkedIn</a>", "+33 6 51 45 78 31"];
+        $infos = ["<a class=\"text-white\" href=\"/assets/CV_Marc_Bayart.pdf\" target='_blank'>Téléchargez mon CV !</a>", "Permis B et véhicule personnel", "Mobilité régionale", "marc.bayart62@gmail.com", "<a class=\"text-white\" href=\"https://www.linkedin.com/in/marc-bayart/\" target='_blank'>Vers mon compte LinkedIn</a>", "+33 6 51 45 78 31"];
 
         for($i=0;$i<$this::NOMBRE_REFERENCE;$i++){
             $info = new Information();

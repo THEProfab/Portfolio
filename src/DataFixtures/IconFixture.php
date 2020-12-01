@@ -14,7 +14,7 @@ class IconFixture extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $icons = ["fas fa-file-download", "fas fa-car", "fas fa-globe", "fas fa-at", "fas fa-linkedin", "fas fa-alt", "fas fa-plus", "fas fa-check", "fas fa-user", "fas fa-brain"];
+        $icons = ["fas fa-file-download", "fas fa-car", "fas fa-globe", "fas fa-at", "fab fa-linkedin", "fas fa-phone", "fas fa-plus", "fas fa-check", "fas fa-user", "fas fa-brain"];
 
         for($i = 0 ; $i < $this::NOMBRE_REFERENCE ; $i++) {
             $icon = new Icon();

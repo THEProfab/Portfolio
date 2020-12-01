@@ -22,10 +22,15 @@ footer{
   font-family: Lato;
 }
 
-#intro{
-  background-image: url(../../public/assets/images/intro.jpg);
-}
-
 hr{
   max-width: 75px;
+}
+
+#intro {
+  background: url("../../public/assets/images/intro.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 60%;
 }

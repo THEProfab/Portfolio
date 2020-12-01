@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Information;
 
 class PortfolioController extends AbstractController
 {
@@ -13,6 +14,10 @@ class PortfolioController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('portfolio/home.html.twig');
+        $repoInfo = $this->getDoctrine()->getRepository(Information::class);
+
+        $infos = $repoInfo->findAll();
+
+        return $this->render('portfolio/home.html.twig', ['infos' => $infos]);
     }
 }
