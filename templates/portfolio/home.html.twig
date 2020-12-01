@@ -19,7 +19,7 @@
                 <div class="col text-center text-secondary mt-5">
                     <h2> Qui suis-je ? </h2>
                     <hr class="my-4 bg-secondary">
-                    <img height="150" class="rounded-lg mt-3" src="{{ asset('/assets/images/marc.png') }}" alt="Photo Marc">
+                    <img id="moi" class="mt-3" src="{{ asset('/assets/images/marc.png') }}" alt="Photo Marc">
                     <p class="mt-4 mb-5">
                         Étudiant en deuxième année de DUT (Diplôme Universitaire de Technologie)
                         informatique à Lens. Je suis particulièrement intéressé par le développement Java et PHP (Back-end).
@@ -34,29 +34,60 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="offset-1 col-sm-2">
-                    <a class="btn btn-primary" data-toggle="collapse" href="#formation" role="button" aria-expanded="false" aria-controls="formation">
-                        Formation
+                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#formations" role="button" aria-expanded="false" aria-controls="formations">
+                        Formations
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    <a class="btn btn-primary" data-toggle="collapse" href="#exp" role="button" aria-expanded="false" aria-controls="expériences professionnelles">
+                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#exp" role="button" aria-expanded="false" aria-controls="expériences professionnelles">
                         Expériences professionnelles
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    <a class="btn btn-primary" data-toggle="collapse" href="#projets" role="button" aria-expanded="false" aria-controls="projets">
+                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#projets" role="button" aria-expanded="false" aria-controls="projets">
                         Projets
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    <a class="btn btn-primary" data-toggle="collapse" href="#qualites" role="button" aria-expanded="false" aria-controls="qualités">
+                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#qualites" role="button" aria-expanded="false" aria-controls="qualités">
                         Qualités
                     </a>
                 </div>
                 <div class="col-sm-2">
-                    <a class="btn btn-primary" data-toggle="collapse" href="#loisirs" role="button" aria-expanded="false" aria-controls="loisirs">
+                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#loisirs" role="button" aria-expanded="false" aria-controls="loisirs">
                         Loisirs
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collapse" id="formations">
+        <div class="container-fluid bg-primary">
+            <div class="row">
+                <div class="col text-center text-white my-5">
+                    <h2 class="mt-4"> Mes formations </h2>
+                    <hr class="my-4 bg-white">
+                    <div class="container-lg">
+                        <div class="row">
+                            {% for f in formations %}
+                                <div class="col-sm mb-3">
+                                    <img class="img_ecole mt-4 mb-2 mx-5" src="/assets/images/{{ f.picture.picture }}" alt="photo école {{ f.picture.picture }}">
+                                    <p>
+                                        <strong class="lead"> <u>{{ f.degree }}</u> </strong>
+                                        {% if f.description is not null %}
+                                            <br>
+                                            {{ f.description }}
+                                        {% endif %}
+                                        <br>
+                                        {{ f.school }}
+                                        <br>
+                                        de {{ f.beginning }} à {{ f.end }}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

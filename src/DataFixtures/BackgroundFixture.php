@@ -15,7 +15,7 @@ class BackgroundFixture extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $degrees = [
-            ["Baccalauréat Scientifique", "Lycée Robeespierre, Arras", "2016", "2019", "Mention Très bien et Mention Européenne Anglais"],
+            ["Baccalauréat Scientifique", "Lycée Robespierre, Arras", "2016", "2019", "Mention Très bien et Mention Européenne Anglais"],
             ["DUT Informatique", "IUT de Lens", "2019", "2021", null]
         ];
 
