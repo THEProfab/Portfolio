@@ -72,7 +72,7 @@
                         <div class="row">
                             {% for f in formations %}
                                 <div class="col-sm mb-3">
-                                    <img class="img_ecole mt-4 mb-2 mx-5" src="/assets/images/{{ f.picture.picture }}" alt="photo école {{ f.picture.picture }}">
+                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ f.picture.picture }}" alt="photo école {{ f.picture.picture }}">
                                     <p>
                                         <strong class="lead"> <u>{{ f.degree }}</u> </strong>
                                         {% if f.description is not null %}
@@ -83,6 +83,43 @@
                                         {{ f.school }}
                                         <br>
                                         de {{ f.beginning }} à {{ f.end }}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collapse" id="exp">
+        <div class="container-fluid bg-white">
+            <div class="row">
+                <div class="col text-center text-primary my-5">
+                    <h2 class="mt-4"> Mes expériences professionnelles </h2>
+                    <hr class="my-4 bg-primary">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for e in experiences %}
+                                <div class="col-4 mb-3">
+                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ e.picture.picture }}" alt="photo école {{ e.picture.picture }}">
+                                    <p>
+                                        <strong class="lead"> <u>{{ e.job }}</u> </strong>
+                                        <br>
+                                        {{ e.company }}
+                                        <br>
+                                        du {{ e.beginning }} au {{ e.end }} 2020
+                                        <br>
+                                        <br>
+                                        <a class="btn btn-outline-secondary" data-toggle="collapse" href="#details{{ e.id }}" role="button" aria-expanded="false" aria-controls="details{{ e.id }}">
+                                            Détails
+                                        </a>
+                                        <br>
+                                        <br>
+                                        <span class="collapse" id="details{{ e.id }}">
+                                            {{ e.description }}
+                                        </span>
                                     </p>
                                 </div>
                             {% endfor %}

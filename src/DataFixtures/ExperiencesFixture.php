@@ -10,13 +10,14 @@ use Doctrine\Persistence\ObjectManager;
 class ExperiencesFixture extends Fixture implements DependentFixtureInterface
 {
     public const LIBELLE_REFERENCE = 'experience_';
-    public const NOMBRE_REFERENCE = 2;
+    public const NOMBRE_REFERENCE = 3;
 
     public function load(ObjectManager $manager)
     {
         $exps = [
-            ["Hôte d'accueil", "Agence BNP Paribas, Saint Pol-sur-Ternoise", "2019-07-06", "2019-08-08", "Ayant 18 ans, j'ai pu avoir une première expérience en entreprise chez BNP Paribas. En tant qu'hôte d'accueil en agence, je me suis occupé d'accueillir les clients et de réaliser certaines opérations bancaires basiques."],
-            ["Mission d'archivage", "BNP Paribas, Lille et Marcq-en-Barœul", "2020-08-03", "2020-08-28", "La première expérience s'étant bien passée, j'ai décidé de travailler une nouvelle fois pour BNP Paribas durant les vacances d'été. Cette fois-ci, je me suis occupé d'archiver au format numérique des documents au format papier. Cela n'a pas été simple à cause de la chaleur et la Covid mais j'ai, malgré tout, réussi à atteindre l'objectif fixé."]
+            ["Hôte d'accueil", "Agence BNP Paribas, Saint Pol-sur-Ternoise", "6 juillet", "8 août", "Ayant 18 ans, j'ai décidé de travailler en juillet afin d'avoir une première expérience en entreprise chez BNP Paribas. En tant qu'hôte d'accueil en agence, je me suis occupé d'accueillir les clients et de réaliser certaines opérations bancaires basiques."],
+            ["Mission d'archivage", "BNP Paribas, Lille et Marcq-en-Barœul", "3 août", "28 août", "La première expérience s'étant bien passée, j'ai décidé de travailler une nouvelle fois pour BNP Paribas durant les vacances d'été. Cette fois-ci, je me suis occupé d'archiver au format numérique des documents au format papier. Cela n'a pas été simple à cause de la chaleur et la Covid mais j'ai, malgré tout, réussi à atteindre l'objectif fixé."],
+            ["Tutorat", "IUT de Lens", "janvier 2021 ?", "février 2021 ?", "L'IUT a proposé du tutorat dispensé par des étudiants de deuxième année aux étudiants de première année afin de les aider notamment en algorithmique et en programation. Ayant de bons résultats, je me suis donc porté volontaire afin de dispenser ce tutorat à un petit groupe de 5 étudiants."]
         ];
 
         for ($i = 0;$i<self::NOMBRE_REFERENCE;$i++){
