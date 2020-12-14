@@ -130,6 +130,32 @@
         </div>
     </section>
 
+    <section class="collapse" id="qualites">
+        <div class="container-fluid bg-secondary">
+            <div class="row">
+                <div class="col text-center text-white my-5">
+                    <h2 class="mt-4"> Mes qualités </h2>
+                    <hr class="my-4 bg-white">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for q in qualites %}
+                                <div class="col-xl col-sm-6 my-3">
+                                    <p>
+                                        <i class="{{ q.icon.icon | raw }} fa-5x mb-2"></i>
+                                        <br>
+                                        <strong class="lead"> <u>{{ q.name }}</u> </strong>
+                                        <br>
+                                        {{ q.description }}
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="collapse" id="loisirs">
         <div class="container-fluid bg-primary">
             <div class="row">
