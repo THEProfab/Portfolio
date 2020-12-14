@@ -23,7 +23,7 @@ class HobbyFixture extends Fixture implements DependentFixtureInterface
             $hobby = new Hobby();
             $hobby->setTitle($hobbys[$i][0]);
             $hobby->setDescription($hobbys[$i][1])
-                ->setPicture($this->getReference(PictureFixture::LIBELLE_REFERENCE . ($i+4))); // car il y a déjà les images des backgrounds et experiences
+                ->setPicture($this->getReference(PictureFixture::LIBELLE_REFERENCE . ($i+5))); // car il y a déjà les images des backgrounds et experiences
 
             $this->addReference($this::LIBELLE_REFERENCE . $i, $hobby);
 

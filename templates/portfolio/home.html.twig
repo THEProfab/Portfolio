@@ -102,7 +102,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             {% for e in experiences %}
-                                <div class="col-4 mb-3">
+                                <div class="col-xl-4 mb-3">
                                     <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ e.picture.picture }}" alt="photo école {{ e.picture.picture }}">
                                     <p>
                                         <strong class="lead"> <u>{{ e.job }}</u> </strong>
@@ -120,6 +120,32 @@
                                         <span class="collapse" id="details{{ e.id }}">
                                             {{ e.description }}
                                         </span>
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collapse" id="loisirs">
+        <div class="container-fluid bg-primary">
+            <div class="row">
+                <div class="col text-center text-white my-5">
+                    <h2 class="mt-4"> Mes loisirs </h2>
+                    <hr class="my-4 bg-white">
+                    <div class="container-lg">
+                        <div class="row">
+                            {% for l in loisirs %}
+                                <div class="col-xl mb-3">
+                                    <p>
+                                        <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ l.picture.picture }}" alt="photo loisir {{ l.picture.picture }}">
+                                        <br>
+                                        <strong class="lead"> <u>{{ l.title }}</u> </strong>
+                                        <br>
+                                        {{ l.description }}
                                     </p>
                                 </div>
                             {% endfor %}
