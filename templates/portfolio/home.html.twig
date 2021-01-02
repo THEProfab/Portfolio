@@ -96,9 +96,9 @@
     <section class="collapse" id="exp">
         <div class="container-fluid bg-white">
             <div class="row">
-                <div class="col text-center text-primary my-5">
+                <div class="col text-center text-secondary my-5">
                     <h2 class="mt-4"> Mes expériences professionnelles </h2>
-                    <hr class="my-4 bg-primary">
+                    <hr class="my-4 bg-secondary">
                     <div class="container-fluid">
                         <div class="row">
                             {% for e in experiences %}
@@ -119,6 +119,41 @@
                                         <br>
                                         <span class="collapse" id="details{{ e.id }}">
                                             {{ e.description }}
+                                        </span>
+                                    </p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collapse" id="projets">
+        <div class="container-fluid bg-white">
+            <div class="row">
+                <div class="col text-center text-primary my-5">
+                    <h2 class="mt-4"> Mes projets </h2>
+                    <hr class="my-4 bg-primary">
+                    <div class="container">
+                        <div class="row">
+                            {% for p in projets %}
+                                <div class="col-xl-6 mb-3">
+                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ p.picture.picture }}" alt="photo projet {{ p.picture.picture }}">
+                                    <p>
+                                        <strong class="lead"> <u>{{ p.title }}</u> </strong>
+                                        <br>
+                                        {{ p.beginning }} - {{ p.end }}
+                                        <br>
+                                        <br>
+                                        <a class="btn btn-outline-primary" data-toggle="collapse" href="#details{{ p.id }}" role="button" aria-expanded="false" aria-controls="details{{ p.id }}">
+                                            Détails
+                                        </a>
+                                        <br>
+                                        <br>
+                                        <span class="collapse" id="details{{ p.id }}">
+                                            {{ p.description }}
                                         </span>
                                     </p>
                                 </div>
