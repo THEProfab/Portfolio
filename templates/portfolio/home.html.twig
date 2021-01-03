@@ -23,199 +23,199 @@
                     <p class="mt-4 mb-5">
                         Étudiant en deuxième année de DUT (Diplôme Universitaire de Technologie)
                         informatique à Lens. Je suis particulièrement intéressé par le développement Java et PHP (Back-end).
-                        Si vous voulez en savoir plus, utilisez les boutons ci-dessous !
+                        Si vous souhaitez en savoir plus, utilisez les boutons ci-dessous !
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="my-5">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="offset-1 col-sm-2">
-                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#formations" role="button" aria-expanded="false" aria-controls="formations">
-                        Formations
-                    </a>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#exp" role="button" aria-expanded="false" aria-controls="expériences professionnelles">
-                        Expériences professionnelles
-                    </a>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#projets" role="button" aria-expanded="false" aria-controls="projets">
-                        Projets
-                    </a>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#qualites" role="button" aria-expanded="false" aria-controls="qualités">
-                        Qualités
-                    </a>
-                </div>
-                <div class="col-sm-2">
-                    <a class="btn btn-outline-primary" data-toggle="collapse" href="#loisirs" role="button" aria-expanded="false" aria-controls="loisirs">
-                        Loisirs
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="accordion" id="sections">
+        <div class="card">
+            <button class="btn btn-block btn-outline-primary text-center card-header boutonsSections" id="mesformations" type="button" data-toggle="collapse" data-target="#formations" aria-expanded="false" aria-controls="formations">
+                Formations
+            </button>
 
-    <section class="collapse" id="formations">
-        <div class="container-fluid bg-primary">
-            <div class="row">
-                <div class="col text-center text-white my-5">
-                    <h2 class="mt-4"> Mes formations </h2>
-                    <hr class="my-4 bg-white">
-                    <div class="container-lg">
-                        <div class="row">
-                            {% for f in formations %}
-                                <div class="col-sm mb-3">
-                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ f.picture.picture }}" alt="photo école {{ f.picture.picture }}">
-                                    <p>
-                                        <strong class="lead"> <u>{{ f.degree }}</u> </strong>
-                                        {% if f.description is not null %}
-                                            <br>
-                                            {{ f.description }}
-                                        {% endif %}
-                                        <br>
-                                        {{ f.school }}
-                                        <br>
-                                        de {{ f.beginning }} à {{ f.end }}
-                                    </p>
+            <div id="formations" class="collapse container-fluid bg-primary" aria-labelledby="mesformations" data-parent="#sections">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center text-white mt-5 mb-4">
+                            <h2> Mes formations </h2>
+                            <hr class="my-4 bg-white">
+                            <div class="container-lg">
+                                <div class="row">
+                                    {% for f in formations %}
+                                        <div class="col-md-6 mb-2">
+                                            <img class="img-fluid img mt-4 mb-2 mx-auto" src="/assets/images/{{ f.picture.picture }}" alt="photo école {{ f.picture.picture }}">
+                                            <p>
+                                                <strong class="lead"> <u>{{ f.degree }}</u> </strong>
+                                                {% if f.description is not null %}
+                                                    <br>
+                                                    {{ f.description }}
+                                                {% endif %}
+                                                <br>
+                                                {{ f.school }}
+                                                <br>
+                                                de {{ f.beginning }} à {{ f.end }}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="collapse" id="exp">
-        <div class="container-fluid bg-white">
-            <div class="row">
-                <div class="col text-center text-secondary my-5">
-                    <h2 class="mt-4"> Mes expériences professionnelles </h2>
-                    <hr class="my-4 bg-secondary">
-                    <div class="container-fluid">
-                        <div class="row">
-                            {% for e in experiences %}
-                                <div class="col-xl-4 mb-3">
-                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ e.picture.picture }}" alt="photo école {{ e.picture.picture }}">
-                                    <p>
-                                        <strong class="lead"> <u>{{ e.job }}</u> </strong>
-                                        <br>
-                                        {{ e.company }}
-                                        <br>
-                                        du {{ e.beginning }} au {{ e.end }} 2020
-                                        <br>
-                                        <br>
-                                        <a class="btn btn-outline-secondary" data-toggle="collapse" href="#details{{ e.id }}" role="button" aria-expanded="false" aria-controls="details{{ e.id }}">
-                                            Détails
-                                        </a>
-                                        <br>
-                                        <br>
-                                        <span class="collapse" id="details{{ e.id }}">
-                                            {{ e.description }}
-                                        </span>
-                                    </p>
+        <div class="card">
+            <button class="btn btn-block btn-outline-primary text-center card-header boutonsSections" id="mesexperiences" type="button" data-toggle="collapse" data-target="#experiences" aria-expanded="false" aria-controls="experiences">
+                Expériences professionnelles
+            </button>
+
+            <div id="experiences" class="collapse container-fluid bg-secondary" aria-labelledby="mesexperiences" data-parent="#sections">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center text-white mt-5 mb-4">
+                            <h2> Mes expériences professionnelles </h2>
+                            <hr class="my-4 bg-white">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    {% for e in experiences %}
+                                        <div class="col-xl-4 mb-2">
+                                            <img class="img-fluid img mt-4 mb-2 mx-auto" src="/assets/images/{{ e.picture.picture }}" alt="photo école {{ e.picture.picture }}">
+                                            <p>
+                                                <strong class="lead"> <u>{{ e.job }}</u> </strong>
+                                                <br>
+                                                {{ e.company }}
+                                                <br>
+                                                du {{ e.beginning }} au {{ e.end }} 2020
+                                                <br>
+                                                <br>
+                                                <a class="btn btn-outline-light boutonDetails" data-toggle="collapse" href="#details{{ e.id }}" role="button" aria-expanded="false" aria-controls="details{{ e.id }}">
+                                                    Détails
+                                                </a>
+                                                <br>
+                                                <br>
+                                                <span class="collapse" id="details{{ e.id }}">
+                                                    {{ e.description }}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="collapse" id="projets">
-        <div class="container-fluid bg-white">
-            <div class="row">
-                <div class="col text-center text-primary my-5">
-                    <h2 class="mt-4"> Mes projets </h2>
-                    <hr class="my-4 bg-primary">
-                    <div class="container">
-                        <div class="row">
-                            {% for p in projets %}
-                                <div class="col-xl-6 mb-3">
-                                    <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ p.picture.picture }}" alt="photo projet {{ p.picture.picture }}">
-                                    <p>
-                                        <strong class="lead"> <u>{{ p.title }}</u> </strong>
-                                        <br>
-                                        {{ p.beginning }} - {{ p.end }}
-                                        <br>
-                                        <br>
-                                        <a class="btn btn-outline-primary" data-toggle="collapse" href="#details{{ p.id }}" role="button" aria-expanded="false" aria-controls="details{{ p.id }}">
-                                            Détails
-                                        </a>
-                                        <br>
-                                        <br>
-                                        <span class="collapse" id="details{{ p.id }}">
-                                            {{ p.description }}
-                                        </span>
-                                    </p>
+        <div class="card">
+            <button class="btn btn-block btn-outline-primary text-center card-header boutonsSections" id="mesprojets" type="button" data-toggle="collapse" data-target="#projets" aria-expanded="false" aria-controls="projets">
+                Projets
+            </button>
+
+            <div id="projets" class="collapse container-fluid bg-white" aria-labelledby="mesprojets" data-parent="#sections">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center text-primary mt-5 mb-4">
+                            <h2> Mes projets </h2>
+                            <hr class="my-4 bg-primary">
+                            <div class="container">
+                                <div class="row">
+                                    {% for p in projets %}
+                                        <div class="col-xl-6 mb-2">
+                                            <img class="img-fluid img mt-4 mb-2 mx-auto" src="/assets/images/{{ p.picture.picture }}" alt="photo projet {{ p.picture.picture }}">
+                                            <p>
+                                                <strong class="lead"> <u>{{ p.title }}</u> </strong>
+                                                <br>
+                                                {{ p.beginning }} - {{ p.end }}
+                                                <br>
+                                                <br>
+                                                <a class="btn btn-outline-primary boutonDetails" data-toggle="collapse" href="#details{{ p.id }}" role="button" aria-expanded="false" aria-controls="details{{ p.id }}">
+                                                    Détails
+                                                </a>
+                                                <br>
+                                                <br>
+                                                <span class="collapse" id="details{{ p.id }}">
+                                                    {{ p.description }}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="collapse" id="qualites">
-        <div class="container-fluid bg-secondary">
-            <div class="row">
-                <div class="col text-center text-white my-5">
-                    <h2 class="mt-4"> Mes qualités </h2>
-                    <hr class="my-4 bg-white">
-                    <div class="container-fluid">
-                        <div class="row">
-                            {% for q in qualites %}
-                                <div class="col-xl col-sm-6 my-3">
-                                    <p>
-                                        <i class="{{ q.icon.icon | raw }} fa-5x mb-2"></i>
-                                        <br>
-                                        <strong class="lead"> <u>{{ q.name }}</u> </strong>
-                                        <br>
-                                        {{ q.description }}
-                                    </p>
+        <div class="card">
+            <button class="btn btn-block btn-outline-primary text-center card-header boutonsSections" id="mesqualites" type="button" data-toggle="collapse" data-target="#qualites" aria-expanded="false" aria-controls="qualites">
+                Qualités
+            </button>
+
+            <div id="qualites" class="collapse container-fluid bg-primary" aria-labelledby="mesqualites" data-parent="#sections">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center text-white mt-5 mb-4">
+                            <h2> Mes qualités </h2>
+                            <hr class="my-4 bg-white">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    {% for q in qualites %}
+                                        <div class="col-xl col-sm-6 mb-2">
+                                            <p>
+                                                <i class="{{ q.icon.icon | raw }} fa-4x mt-4 mb-2"></i>
+                                                <br>
+                                                <strong class="lead"> <u>{{ q.name }}</u> </strong>
+                                                <br>
+                                                {{ q.description }}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="collapse" id="loisirs">
-        <div class="container-fluid bg-primary">
-            <div class="row">
-                <div class="col text-center text-white my-5">
-                    <h2 class="mt-4"> Mes loisirs </h2>
-                    <hr class="my-4 bg-white">
-                    <div class="container-lg">
-                        <div class="row">
-                            {% for l in loisirs %}
-                                <div class="col-xl mb-3">
-                                    <p>
-                                        <img class="img mt-4 mb-2 mx-5" src="/assets/images/{{ l.picture.picture }}" alt="photo loisir {{ l.picture.picture }}">
-                                        <br>
-                                        <strong class="lead"> <u>{{ l.title }}</u> </strong>
-                                        <br>
-                                        {{ l.description }}
-                                    </p>
+        <div class="card">
+            <button class="btn btn-block btn-outline-primary text-center card-header boutonsSections" id="mesloisirs" type="button" data-toggle="collapse" data-target="#loisirs" aria-expanded="false" aria-controls="loisirs">
+                Loisirs
+            </button>
+
+            <div id="loisirs" class="collapse container-fluid bg-white" aria-labelledby="mesloisirs" data-parent="#sections">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center text-primary mt-5 mb-4">
+                            <h2> Mes loisirs </h2>
+                            <hr class="my-4 bg-primary">
+                            <div class="container-lg">
+                                <div class="row">
+                                    {% for l in loisirs %}
+                                        <div class="col-xl mb-2">
+                                            <p>
+                                                <img class="img-fluid img mt-4 mb-2 mx-auto" src="/assets/images/{{ l.picture.picture }}" alt="photo loisir {{ l.picture.picture }}">
+                                                <br>
+                                                <strong class="lead"> <u>{{ l.title }}</u> </strong>
+                                                <br>
+                                                {{ l.description }}
+                                            </p>
+                                        </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 {% endblock %}
 
 {% block footer %}
@@ -227,8 +227,8 @@
                     <hr class="my-4 bg-white">
                     <div class="row mb-5">
                         {% for i in infos %}
-                            <div class="col-sm-4 my-3">
-                                <i class="{{ i.icon.icon | raw }} fa-5x mb-2"></i>
+                            <div class="col-sm-6 col-xl-4 my-3">
+                                <i class="{{ i.icon.icon | raw }} fa-4x mb-2"></i>
                                 <p>{{ i.description | raw }}</p>
                             </div>
                         {% endfor %}
