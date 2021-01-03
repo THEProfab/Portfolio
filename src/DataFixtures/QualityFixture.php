@@ -17,7 +17,7 @@ class QualityFixture extends Fixture implements DependentFixtureInterface
     {
         $qualities = [
             ["Investi", "Je donne toujours le meilleur de moi-même."],
-            ["Respectueux", "Respecter les règles est, pour moi, essentiel."],
+            ["Envie d'apprendre", "Je n'hésite jamais à apprendre afin de devenir meilleur."],
             ["Autonome", "Je sais travailler de mon côté lorsqu'il le faut."],
             ["Réfléchi", "Je ne me lance pas tête baissée dans des problèmes."]
         ];

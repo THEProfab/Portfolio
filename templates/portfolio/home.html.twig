@@ -92,7 +92,7 @@
                                                 du {{ e.beginning }} au {{ e.end }} 2020
                                                 <br>
                                                 <br>
-                                                <a class="btn btn-outline-light boutonDetails" data-toggle="collapse" href="#details{{ e.id }}" role="button" aria-expanded="false" aria-controls="details{{ e.id }}">
+                                                <a class="btn btn-outline-light boutons" data-toggle="collapse" href="#details{{ e.id }}" role="button" aria-expanded="false" aria-controls="details{{ e.id }}">
                                                     Détails
                                                 </a>
                                                 <br>
@@ -122,18 +122,25 @@
                         <div class="col text-center text-primary mt-5 mb-4">
                             <h2> Mes projets </h2>
                             <hr class="my-4 bg-primary">
-                            <div class="container">
+                            <div class="container-fluid">
                                 <div class="row">
                                     {% for p in projets %}
-                                        <div class="col-xl-6 mb-2">
+                                        <div class="col-xl-4 mb-2">
                                             <img class="img-fluid img mt-4 mb-2 mx-auto" src="/assets/images/{{ p.picture.picture }}" alt="photo projet {{ p.picture.picture }}">
                                             <p>
                                                 <strong class="lead"> <u>{{ p.title }}</u> </strong>
                                                 <br>
                                                 {{ p.beginning }} - {{ p.end }}
+                                                {% if p.link is not null %}
+                                                    <br>
+                                                    <br>
+                                                    <a class="btn btn-outline-primary boutons rounded-pill" href="{{ p.link }}" target='_blank'>
+                                                        Vers le dépôt GitHub du projet
+                                                    </a>
+                                                {% endif %}
                                                 <br>
                                                 <br>
-                                                <a class="btn btn-outline-primary boutonDetails" data-toggle="collapse" href="#details{{ p.id }}" role="button" aria-expanded="false" aria-controls="details{{ p.id }}">
+                                                <a class="btn btn-outline-primary boutons rounded-pill" data-toggle="collapse" href="#details{{ p.id }}" role="button" aria-expanded="false" aria-controls="details{{ p.id }}">
                                                     Détails
                                                 </a>
                                                 <br>
@@ -168,7 +175,7 @@
                                     {% for q in qualites %}
                                         <div class="col-xl col-sm-6 mb-2">
                                             <p>
-                                                <i class="{{ q.icon.icon | raw }} fa-4x mt-4 mb-2"></i>
+                                                <i class="{{ q.icon.icon }} fa-4x mt-4 mb-2"></i>
                                                 <br>
                                                 <strong class="lead"> <u>{{ q.name }}</u> </strong>
                                                 <br>
@@ -228,7 +235,7 @@
                     <div class="row mb-5">
                         {% for i in infos %}
                             <div class="col-sm-6 col-xl-4 my-3">
-                                <i class="{{ i.icon.icon | raw }} fa-4x mb-2"></i>
+                                <i class="{{ i.icon.icon }} fa-4x mb-2"></i>
                                 <p>{{ i.description | raw }}</p>
                             </div>
                         {% endfor %}
