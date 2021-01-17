@@ -35,12 +35,12 @@ class Project
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $beginning;
+    private $startDate;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $end;
+    private $endDate;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -88,26 +88,26 @@ class Project
         return $this;
     }
 
-    public function getBeginning(): ?string
+    public function getStartDate(): ?string
     {
-        return $this->beginning;
+        return $this->startDate;
     }
 
-    public function setBeginning(string $beginning): self
+    public function setStartDate(string $startDate): self
     {
-        $this->beginning = $beginning;
+        $this->startDate = $startDate;
 
         return $this;
     }
 
-    public function getEnd(): ?string
+    public function getEndDate(): ?string
     {
-        return $this->end;
+        return $this->endDate;
     }
 
-    public function setEnd(string $end): self
+    public function setEndDate(string $endDate): self
     {
-        $this->end = $end;
+        $this->endDate = $endDate;
 
         return $this;
     }

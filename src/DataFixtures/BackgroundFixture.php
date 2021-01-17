@@ -23,8 +23,8 @@ class BackgroundFixture extends Fixture implements DependentFixtureInterface
             $bg = new Background();
             $bg->setDegree($degrees[$i][0])
                 ->setSchool($degrees[$i][1])
-                ->setBeginning($degrees[$i][2])
-                ->setEnd($degrees[$i][3])
+                ->setStartDate($degrees[$i][2])
+                ->setEndDate($degrees[$i][3])
                 ->setDescription($degrees[$i][4])
                 ->setPicture($this->getReference(PictureFixture::LIBELLE_REFERENCE . $i));
 

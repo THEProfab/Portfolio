@@ -26,8 +26,8 @@ class ProjectFixture extends Fixture implements DependentFixtureInterface
             $p = new Project();
             $p->setTitle($projects[$i][0])
                 ->setDescription($projects[$i][1])
-                ->setBeginning($projects[$i][2])
-                ->setEnd($projects[$i][3])
+                ->setStartDate($projects[$i][2])
+                ->setEndDate($projects[$i][3])
                 ->setLink($projects[$i][4])
                 ->setPicture($this->getReference(PictureFixture::LIBELLE_REFERENCE . ($i+7))); // car il y a déjà les images des backgrounds, experiences et hobbies
 

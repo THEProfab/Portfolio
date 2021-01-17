@@ -24,8 +24,8 @@ class ExperiencesFixture extends Fixture implements DependentFixtureInterface
             $exp = new Experiences();
             $exp->setJob($exps[$i][0])
                 ->setCompany($exps[$i][1])
-                ->setBeginning($exps[$i][2])
-                ->setEnd($exps[$i][3])
+                ->setStartDate($exps[$i][2])
+                ->setEndDate($exps[$i][3])
                 ->setDescription($exps[$i][4])
                 ->setPicture($this->getReference(PictureFixture::LIBELLE_REFERENCE . ($i+2))); // car il y a déjà les images des backgrounds
 
